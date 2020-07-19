@@ -1,0 +1,232 @@
+$color: #444;
+$secondary-color: goldenrod;
+$show-image: true;
+$home-image: url(../img/background.jpg);
+$background-opacity: 0.8;
+
+@mixin ease-out-transition() {
+  transition: all 1s ease-out;
+}
+@mixin background {
+  @if $show-image {
+    &#bg-img {
+      background: $home-image;
+      background-size: cover; //whole image will cover the screen
+      background-attachment: fixed;
+      &:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba($color, $background-opacity);
+        z-index: -1; //move the image back and text front of that extra layer we added
+      }
+    }
+  }
+}
+
+
+* {
+  box-sizing: border-box;
+}
+
+
+body {
+  @include background();
+  background-color: $color;
+  color: set-text-color($color);
+  height: 100%;
+  margin: 0;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  line-height: 1.5;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-weight: 400;
+
+  &.large-heading {
+    font-size: 3rem;
+  }
+  &.small-heading {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    padding: 0.2rem 1rem;
+    background: rgba(lighten($color, 2), 0.5);
+  }
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+header {
+  z-index: 2;
+  /*that menu-btn always stick even we scroll*/
+  position: fixed;
+  width: 100%;
+}
+
+.text-secondary {
+  color: $secondary-color;
+}
+
+main {
+  padding: 4rem;
+  //height: 100%;
+  min-height: calc(100vh);
+  .icons {
+    margin-top: 0.2rem;
+  }
+  a {
+    padding: 0.4rem;
+
+    &:hover {
+      color: $secondary-color;
+      @include ease-out-transition();
+    }
+  }
+  &#home {
+    overflow: hidden;
+    h1 {
+      margin-top: 20vh; //vh is just 100slice and taking 20 part ofit vertically
+    }
+    .tech-stack{
+      margin: 2rem 0rem;
+      padding-top: 1rem;
+    }
+  }
+}
+//set text color
+@function set-text-color($color) {
+  @if (lightness($color) >40) {
+    @return #000;
+  } @else {
+    @return #fff;
+  }
+}
+
+//Media Query Mixins
+@mixin mediaSm {
+  @media screen and(max-width:500px) {
+    @content;
+  }
+}
+@mixin mediaMd {
+  @media screen and(max-width:768px) {
+    @content;
+  }
+}
+
+@mixin mediaLg {
+  @media screen and (min-wdth: 769px) and (max-width: 1170px) {
+    @content;
+  }
+}
+@mixin mediaXl {
+  @media screen and (min-wdth: 1171px) {
+    @content;
+  }
+}
+
+.about-info {
+  display: grid;
+  grid-row-gap: 180px;
+  grid-column-gap: 30px;
+  grid-template-areas:
+    "bioimage bio bio"
+    "job1 job2 job3";
+  // grid-template-columns: repeat(3, 1fr);
+  // grid-template-rows: repeat(2, 1fr);
+  //this is to make the columns size in grid.
+  .bio-image {
+    grid-area: bioimage;
+    margin: auto;
+    border-radius: 50%;
+    border: $secondary-color 3px solid;
+  }
+
+  .bio {
+    grid-area: bio;
+    font-size: 1.5rem;
+    font-family: Arial, Helvetica, sans-serif;
+    grid-column: 2 / span 2;
+  }
+  .job-1 {
+    grid-area: job1; //whatever we have defined above the area
+  }
+
+  .job-2 {
+    grid-area: job2;
+  }
+  .job-3 {
+    grid-area: job3;
+  }
+
+  .job {
+    background: lighten($color, 4.5);
+    padding: 0.5rem;
+    border-bottom: $secondary-color 5px solid;
+  }
+
+}
+
+//work page css
+.projects {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 0.7rem;
+  .item {
+    a {
+      padding: 0px;
+    }
+  }
+  img {
+    width: 100%;
+    border: 3px #fff solid;
+
+    &:hover {
+      opacity: 0.5;
+      border-color: $secondary-color;
+      @include ease-out-transition();
+    }
+  }
+}
+
+//buttn styles
+.btn {
+  //here btn is the super class which will inherit the properties
+  display: block;
+  padding: 0.5rem 1rem !important; //!important->this will be priority
+  border: 0;
+  margin-bottom: 0.3rem;
+
+  &:hover {
+    background-color: $secondary-color;
+    color: set-text-color($secondary-color);
+  }
+}
+
+.btn-dark {
+  @extend .btn;
+  background: darken($color, 50);
+  color: #fff;
+}
+.btn-light {
+  @extend .btn;
+  background: lighten($color, 50);
+  color: #333;
+}
+
+#main-footer {
+  background-color: darken($color, 10);
+  height: 60px;
+  padding: 1rem;
+  text-align: center;
+  color: set-text-color($color);
+}

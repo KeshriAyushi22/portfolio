@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/main.css" />
+    <!--icons-->
+    <link href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" rel="stylesheet"
+        integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous" />
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
+    <script>
+        WebFont.load({
+            google: {
+                families: ["Cookie:regular"]
+            }
+        });
+    </script>
+</head>
+
+<body>
+    <header>
+        <div class="menu-btn">
+            <div class="btn-line"></div>
+            <div class="btn-line"></div>
+            <div class="btn-line"></div>
+        </div>
+        <nav class="menu">
+            <div class="menu-pic">
+                <div class="potrait">
+                    <!--self pic-->
+                </div>
+            </div>
+            <ul class="menu-nav">
+                <li class="nav-item ">
+                    <a href="./index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="./about.html" class="nav-link">About Me</a>
+                </li>
+                <li class="nav-item">
+                    <a href="./work.html" class="nav-link">Projects</a>
+                </li>
+                <li class="nav-item current">
+                    <a href="./contact.html" class="nav-link">Contact</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <!--html 5 -->
+    <main id="contact-main">
+        <div class="contact">
+            <!--image-->
+            <img src="../dist/img/contact1.jpg" class="img-css">
+            <div class="centered">CONTACT ME</div>
+        </div>
+        <div class="contact-detail">
+            <!--contact-->
+            <div class="text-secondary-contact"><span>Get in Touch with me !</span></div>
+            <div class="contact-grid">
+                <table class="contact-table" style="width:75%; margin-left: auto;margin-right: auto;margin-top: 2rem;">
+                    <tr>
+                        <th>
+                            <i class="fa fa-phone-square fa-2x" style="width: 100%;"></i>
+                            <p style="margin-top:1.5rem;">PHONE</p>
+                        </th>
+                        <th>
+                            <i class="fa fa-map-marker-alt fa-2x" aria-hidden="true" style="width: 100%;"></i>
+                            <p style="margin-top:1.5rem;">ADDRESS</p>
+                        </th>
+                        <th style="border: none;">
+                            <i class="fa fa-envelope fa-2x" style="width: 100%;"></i>
+                            <p style="margin-top:1.5rem;">EMAIL</p>
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>(+91)7355941747</td>
+                        <td> Vyalikaval HBCS Layout, Nagavara,</p>
+                            <p> Bengaluru, Karnataka 560045
+                        </td>
+                        <td style="border: none;"> keshri.ayushi10@gmail.com</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="resume">
+                <span class="text-secondary-contact" style="font-family: Verdana;font-size: 18px;">RESUME</span>
+                <abbr title="View">
+                    <a onclick="window.open('/dist/assets/Ayushi_Keshri_Resume.pdf', '_blank', 'fullscreen=yes'); 
+                  return false;">
+                        <i class="fa fa-eye fa-1x"></i></a>
+                </abbr>
+                <abbr title="Download"><a href="/dist/assets/Ayushi_Keshri_Resume.pdf" download="Ayushi_Keshri_Resume">
+                        <i class="fa fa-download fa-1x"></i></a>
+                </abbr>
+            </div>
+            <div>
+                <p class="contact-form">Feel Free To Contact</p>
+<form id="form-style">
+<input type="text" placeholder="yourName" id="name"></input>
+</form>
+            </div>
+        </div>
+        <div class="map">
+            <!--map-->
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.93711154944!2d77.61841961457873!3d13.039674990811266!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae176d98660f57%3A0x7c948b81859e8101!2sAthidi%20Inn%20Ladies%20PG!5e0!3m2!1sen!2sin!4v1584897320904!5m2!1sen!2sin"
+                height="100%" width="100%"></iframe>
+        </div>
+    </main>
+    <footer id="main-footer">
+        Copyright &copy; 2018
+    </footer>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,120 @@
+@import "config";
+
+//contact page
+abbr {
+  text-decoration: none;
+}
+#image {
+  background: url(../img/contact.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba($color, $background-opacity);
+    z-index: -1; //move the image back and text front of that extra layer we added
+  }
+}
+
+#contact-main {
+  padding: 0rem !important;
+  margin: 0;
+}
+.map {
+  height: 500px;
+  width: 100%;
+  padding: 1rem;
+}
+.contact {
+  height: 300px;
+  width: 100%;
+  padding: 0rem;
+}
+.centered {
+  top: -60%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 214px;
+  position: relative;
+  padding: 1rem;
+  text-decoration: none;
+  font-size: 32px;
+  font-weight: 800;
+  font-family: monospace;
+  border: 3px solid white;
+}
+.contact-detail {
+  height: 800px;
+  width: 100%;
+  padding: 0rem;
+}
+.text-secondary-contact {
+  margin-left: auto;
+  margin-top: 5%;
+  margin-right: auto;
+  position: relative;
+  width: 282px;
+  padding: 1rem;
+  color: $secondary-color;
+  font-size: 24px;
+  font-weight: 100;
+  font-family: cursive;
+}
+
+table,
+th,
+td {
+  border: none;
+  border-collapse: collapse;
+}
+th,
+td {
+  padding: 5px;
+  text-align: center;
+  width: 33.33%;
+  border-right: 3px solid $secondary-color;
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+th {
+  color: $secondary-color;
+}
+td {
+  font-size: 13px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.resume {
+  width: 100%;
+  text-align: center;
+  margin-top: 5%;
+  width: 15%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0.2rem;
+  text-shadow: 2px 2px 4px #000000;
+  transition: all 0.5s ease-out;
+  &:hover {
+    border: 3px solid $secondary-color;
+    transition: all 0.5s ease-in;
+    padding: 10px;
+    box-shadow: 5px 10px 18px black;
+    cursor: pointer;
+  }
+}
+.img-css {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  opacity: 0.6;
+}
+.contact-form {
+  margin: 3rem auto;
+  width: 50%;
+  text-align: center;
+  font-size: 32px;
+  font-family: Cookie;
+}
